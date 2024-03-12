@@ -3,5 +3,5 @@ mRNA spot detection pipeline and Growth curves based on cell-segmentation. [FISH
 
 Scripts:
 1. Personalised mRNA Detection-Pipeline and colocalization analysis using FISH-Quant Library for 2-channels, and single cell expression analysis; mRNA_detection_colocalization_pipeline
-2. Growth curves based on input of 2D segmentation of brightfield - live imaging of multiple positions (at the same timepoints) during carbon switch in microfluidics (Growth plots.ipynb)
+2. Growth curves based on input of 2D segmentation of brightfield - live imaging of multiple positions (at the same timepoints, doing a single and mean representation) during carbon switch in microfluidics (Growth plots.ipynb)
 4. Fluigent Oxygen Software protocols for fixation and hybridization duringr RNA FISH of yeast in microfluidics set-up.
