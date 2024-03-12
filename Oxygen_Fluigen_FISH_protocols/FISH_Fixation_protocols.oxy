@@ -1,0 +1,511 @@
+﻿{
+  "Version": "2.3.0.0",
+  "Configuration": {
+    "OnWarning": "Continue",
+    "OnError": "Continue",
+    "OnFatal": "Stop"
+  },
+  "Instruments": [
+    {
+      "Key": "96e459",
+      "ParentKey": null,
+      "UserLabel": null,
+      "Comment": null,
+      "Type": "Link",
+      "Manufacturer": null,
+      "ProductNumber": null,
+      "SerialNumber": "12623",
+      "FirmwareVersion": "849",
+      "Port": null,
+      "RangeMin": null,
+      "RangeMax": null
+    },
+    {
+      "Key": "6db237",
+      "ParentKey": "089c9d",
+      "UserLabel": "left pink mswith ",
+      "Comment": null,
+      "Type": "SwitchEzMSwitch",
+      "Manufacturer": null,
+      "ProductNumber": null,
+      "SerialNumber": null,
+      "FirmwareVersion": null,
+      "Port": "2",
+      "RangeMin": null,
+      "RangeMax": null
+    },
+    {
+      "Key": "089c9d",
+      "ParentKey": "96e459",
+      "UserLabel": null,
+      "Comment": null,
+      "Type": "SwitchEz",
+      "Manufacturer": null,
+      "ProductNumber": null,
+      "SerialNumber": "11902",
+      "FirmwareVersion": "514",
+      "Port": "1",
+      "RangeMin": null,
+      "RangeMax": null
+    },
+    {
+      "Key": "3c493a",
+      "ParentKey": "089c9d",
+      "UserLabel": "right blue mswitch",
+      "Comment": null,
+      "Type": "SwitchEzMSwitch",
+      "Manufacturer": null,
+      "ProductNumber": null,
+      "SerialNumber": null,
+      "FirmwareVersion": null,
+      "Port": "3",
+      "RangeMin": null,
+      "RangeMax": null
+    }
+  ],
+  "Functions": [
+    {
+      "$type": "FunctionBlock|Group",
+      "Functions": [
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 3,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "3c493a"
+          ],
+          "UserLabel": "set PFA 4%",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 2,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to channel 1",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "incubate channel 1",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 3,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to channel 2",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "incubate channel 2",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 10,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to bypass",
+              "Comment": null
+            }
+          ],
+          "UserLabel": "Flush all channels",
+          "Comment": "This block flushes all channels and then switches to bypass for incubation period.\r\n"
+        },
+        {
+          "$type": "FunctionBlock|UserPrompt",
+          "UserLabel": null,
+          "Comment": "turn off pump"
+        },
+        {
+          "$type": "FunctionBlock|Wait",
+          "Duration": "00:45:00",
+          "UserLabel": "PFA 4% incubation time",
+          "Comment": null
+        }
+      ],
+      "UserLabel": "PFA 4% wash",
+      "Comment": null
+    },
+    {
+      "$type": "FunctionBlock|Group",
+      "Functions": [
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 4,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "3c493a"
+          ],
+          "UserLabel": "set Buffer B valve",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 2,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to channel 1",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "incubate channel 1",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 3,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to channel 2",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "incubate channel 2",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 10,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "switch to by pass",
+              "Comment": null
+            }
+          ],
+          "UserLabel": "Flush all channels",
+          "Comment": "This block flushes all channels and then switches to bypass for incubation period.\r\n"
+        },
+        {
+          "$type": "FunctionBlock|Wait",
+          "Duration": "00:05:00",
+          "UserLabel": "Buffer B incubation time",
+          "Comment": null
+        }
+      ],
+      "UserLabel": "Buffer B wash",
+      "Comment": null
+    },
+    {
+      "$type": "FunctionBlock|Group",
+      "Functions": [
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 2,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "6db237"
+          ],
+          "UserLabel": "switch to channel 1",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 6,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "3c493a"
+              ],
+              "UserLabel": "switch to SB",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "SB incubation time",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 4,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "3c493a"
+              ],
+              "UserLabel": "switch to buffer B",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:10:00",
+              "UserLabel": "Buffer B incubation time",
+              "Comment": null
+            }
+          ],
+          "UserLabel": "SB + Buffer B wash",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 3,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "6db237"
+          ],
+          "UserLabel": "switch to channel 2",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 6,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "3c493a"
+              ],
+              "UserLabel": "set SB buffer",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "SB incubation time",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 4,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "3c493a"
+              ],
+              "UserLabel": "set Buffer B",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:10:00",
+              "UserLabel": "Buffer B incubation time",
+              "Comment": null
+            }
+          ],
+          "UserLabel": "SB + Buffer B wash",
+          "Comment": null
+        }
+      ],
+      "UserLabel": "SB wash",
+      "Comment": null
+    },
+    {
+      "$type": "FunctionBlock|Group",
+      "Functions": [
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 4,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "3c493a"
+          ],
+          "UserLabel": "Buffer B Wash",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 2,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "set channel 1",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "ch 1 incubation time",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 3,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "set channel 2",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": "ch2 incubation time",
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 10,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": "set bypass",
+              "Comment": null
+            }
+          ],
+          "UserLabel": "Flush all channels",
+          "Comment": "This block flushes all channels and then switches to bypass for incubation period.\r\n"
+        },
+        {
+          "$type": "FunctionBlock|Wait",
+          "Duration": "00:05:00",
+          "UserLabel": "Buffer B incubation time",
+          "Comment": null
+        }
+      ],
+      "UserLabel": "Buffer B wash",
+      "Comment": null
+    },
+    {
+      "$type": "FunctionBlock|For",
+      "Iterations": 2,
+      "Functions": [
+        {
+          "$type": "FunctionBlock|SetValvePosition",
+          "Position": 1,
+          "Step": false,
+          "Direction": "Shortest",
+          "Wait": false,
+          "InstrumentKeys": [
+            "3c493a"
+          ],
+          "UserLabel": "set channel ethanol",
+          "Comment": null
+        },
+        {
+          "$type": "FunctionBlock|Group",
+          "Functions": [
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 2,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": null,
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": null,
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 3,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": null,
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|Wait",
+              "Duration": "00:05:00",
+              "UserLabel": null,
+              "Comment": null
+            },
+            {
+              "$type": "FunctionBlock|SetValvePosition",
+              "Position": 10,
+              "Step": false,
+              "Direction": "Shortest",
+              "Wait": false,
+              "InstrumentKeys": [
+                "6db237"
+              ],
+              "UserLabel": null,
+              "Comment": null
+            }
+          ],
+          "UserLabel": "Flush all channels",
+          "Comment": "This block flushes all channels and then switches to bypass for incubation period.\r\n"
+        },
+        {
+          "$type": "FunctionBlock|Wait",
+          "Duration": "00:20:00",
+          "UserLabel": "Buffer B incubation time",
+          "Comment": null
+        }
+      ],
+      "UserLabel": "rep hour ethanol wash",
+      "Comment": null
+    }
+  ]
+}
